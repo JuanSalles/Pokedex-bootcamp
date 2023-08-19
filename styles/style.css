@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.titulo-pokedex{
+    
+    text-align: center;
+}
+
+.lista-de-pokemons{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0 10px;
+    align-items: center;
+    gap: 5px;
+    width: 428px;
+}
+
+
+.container-pokemon{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: space-between;
+    padding-left: 20px;
+    border-radius: 20px;
+    width: auto;
+
+}
+
+.container-nome-tipo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+
+
+img{
+    width: 150px
+}
+
+
+.fire{
+    background-color: orange;
+}
+
+.grass{
+    background-color: #02a117;
+}
+
+.water{
+    background-color: #4795d4;
+}
+
+.bug{
+    background-color: #4b03aa;
+}
+
+.pokemon-type{
+    width: 80px;
+    height: 30px;
+    background-color: #00000070;
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
