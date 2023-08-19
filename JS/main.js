@@ -1,5 +1,18 @@
 console.log("===JS CARREGADO===");
 const listaDeExibicao = document.getElementById('pokemonList');
+const sectionPage = document.getElementById('section-page');
+const botaoNext = document.getElementById('button-next-page');
+const botaoBack = document.getElementById('button-back-page');
+
+let pagina = 1;
+let numeroDosPokemons = 0;
+const pokemonsPorPagina = 20;
+
+function verificScroll() {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const documentHeight = document.documentElement.offsetHeight;
+    return scrollPosition >= documentHeight-200;
+  }
 
 async function pokedex (primeiro, ultimo){
 
@@ -9,7 +22,7 @@ async function pokedex (primeiro, ultimo){
     
     teste = await Promise.all(listaDePokemons.map(async (element, index) => {
         
-        const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${index+1}`);
+        const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${index+1+primeiro}`);
         
         const data = await APIResponse.json();
 
@@ -48,7 +61,7 @@ async function exibirPokemons (listaDePokemons){
         lista.appendChild(primeiraDiv);
 
         const imagemDoPokemon = document.createElement('img');
-        imagemDoPokemon.setAttribute("src", `${element.sprites.front_default}`)
+        imagemDoPokemon.setAttribute("src", `${element.sprites.other.dream_world.front_default}`)
         lista.appendChild(imagemDoPokemon);
         listaDeExibicao.appendChild(lista);
 
@@ -56,5 +69,34 @@ async function exibirPokemons (listaDePokemons){
     
 }
 
-let pokemons = pokedex(0, 30);
+sectionPage.addEventListener("click", event =>{
+    if (event.target == botaoNext){
+        listaDeExibicao.textContent = "";
+        numeroDosPokemons += pokemonsPorPagina;
+        pagina++
+        pokedex(numeroDosPokemons, pokemonsPorPagina);
+        window.scrollTo(0, 0);
+        botaoBack.style.display = "block";
+    }else if((event.target == botaoBack) && (pagina > 1)){
+        listaDeExibicao.textContent = "";
+        pagina--
+        numeroDosPokemons -= pokemonsPorPagina;
+        pokedex(numeroDosPokemons, pokemonsPorPagina);
+        window.scrollTo(0, 0);
+        if(pagina === 1){
+            botaoBack.style.display = "none";
+        }
+    }
+})
 
+window.addEventListener("scrollend", event=>{
+    if (verificScroll()) {
+        numeroDosPokemons += pokemonsPorPagina;
+        pagina++
+        pokedex(numeroDosPokemons, pokemonsPorPagina);
+        botaoBack.style.display = "block";
+        // Execute a ação desejada aqui
+      }
+})
+
+pokedex(numeroDosPokemons, pokemonsPorPagina);
