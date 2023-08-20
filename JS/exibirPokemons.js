@@ -1,6 +1,6 @@
 export default async function exibirPokemons (listaDePokemons, elemento){
 
-    listaDePokemons.forEach(async pokemon => {
+    listaDePokemons.forEach(async (pokemon, index) => {
 
         const lista = document.createElement('li');
         lista.classList.add("container-pokemon");
@@ -27,9 +27,13 @@ export default async function exibirPokemons (listaDePokemons, elemento){
 
         const imagemDoPokemon = document.createElement('img');
         imagemDoPokemon.setAttribute("src", `${pokemon.sprites.other.dream_world.front_default}`)
-        lista.appendChild(imagemDoPokemon);
+        const ancora = document.createElement("a");
+        ancora.classList.add("ancora-pokemon")
+        ancora.setAttribute("href","./pages/pokemon.html");
+        ancora.setAttribute("id",`${index}`);
+        ancora.appendChild(imagemDoPokemon);
+        lista.appendChild(ancora)
         elemento.appendChild(lista);
-
     });
     
 }

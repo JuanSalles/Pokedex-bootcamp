@@ -8,6 +8,8 @@ const sectionPage = document.getElementById('section-page');
 const botaoNext = document.getElementById('button-next-page');
 const botaoBack = document.getElementById('button-back-page');
 
+let pokemons;
+
 let pagina = 1;
 let numeroDosPokemons = 0;
 const pokemonsPorPagina = 20;
@@ -16,7 +18,7 @@ function verificScroll() {
     const scrollPosition = window.scrollY + window.innerHeight;
     const documentHeight = document.documentElement.offsetHeight;
     return scrollPosition >= documentHeight-200;
-}
+};
 
 sectionPage.addEventListener("click", event =>{
     if (event.target == botaoNext){
@@ -36,7 +38,7 @@ sectionPage.addEventListener("click", event =>{
             botaoBack.style.display = "none";
         }
     }
-})
+});
 
 window.addEventListener("scrollend", event=>{
     if (verificScroll()) {
@@ -44,10 +46,19 @@ window.addEventListener("scrollend", event=>{
         pagina++
         pokedex(numeroDosPokemons, pokemonsPorPagina);
         botaoBack.style.display = "block";
-        // Execute a ação desejada aqui
-      }
-})
+        renderizarPokemons(numeroDosPokemons, pokemonsPorPagina, listaDeExibicao);
+    }
+});
 
-const pokemons = await pokedex(numeroDosPokemons, pokemonsPorPagina);
 
-exibirPokemons(pokemons, listaDeExibicao);
+listaDeExibicao.addEventListener("click", event =>{
+    const convercao = JSON.stringify(pokemons[event.target.parentElement.id]);
+    localStorage.setItem("pokemon", convercao);
+});
+
+async function renderizarPokemons (offset, quantidadePorPagina, elementoDeExibicao, type=""){
+    pokemons = await pokedex(offset, quantidadePorPagina, type);
+    exibirPokemons(pokemons, elementoDeExibicao);
+};
+
+renderizarPokemons(numeroDosPokemons, pokemonsPorPagina, listaDeExibicao);

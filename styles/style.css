@@ -58,9 +58,11 @@ main{
     
 }
 
+.ancora-pokemon{
+    text-decoration: none;
+}
 
 .container-pokemon{
-    text-decoration: none;
     color: white;
     display: flex;
     align-items: center;
@@ -68,6 +70,7 @@ main{
     justify-content: space-between;
     padding-left: 20px;
     border-radius: 20px;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);;
 }
 
 img{
