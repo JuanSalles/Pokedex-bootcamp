@@ -40,7 +40,7 @@ sectionPage.addEventListener("click", event =>{
     }
 });
 
-window.addEventListener("scrollend", event=>{
+window.addEventListener("scroll", event=>{
     if (verificScroll()) {
         numeroDosPokemons += pokemonsPorPagina;
         pagina++
