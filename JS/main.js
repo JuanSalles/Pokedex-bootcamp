@@ -7,6 +7,7 @@ const listaDeExibicao = document.getElementById('pokemonList');
 const sectionPage = document.getElementById('section-page');
 const botaoNext = document.getElementById('button-next-page');
 const botaoBack = document.getElementById('button-back-page');
+const modal = document.getElementById('poke-modal');
 
 const todosPokemons =[];
 
@@ -52,10 +53,19 @@ window.addEventListener("scroll", event=>{
 
 
 listaDeExibicao.addEventListener("click", event =>{
+    modal.innerHTML = "";
     const convercao = JSON.stringify(todosPokemons[event.target.parentElement.id]);
-    console.log(todosPokemons[event.target.parentElement.id].name)
     localStorage.setItem("pokemon", convercao);
+    const pokemonEscolhido = document.querySelector(`[data-pokeid="${event.target.parentElement.id}"]`);
+    modal.appendChild(pokemonEscolhido);
+    modal.style.display = "block";
 });
+
+modal.addEventListener("click", event => {
+    if(event.target.id == "poke-modal"){
+        modal.style.display = "none";
+    }
+})
 
 async function renderizarPokemons (offset, quantidadePorPagina, elementoDeExibicao, type=""){
     const pokemons = await pokedex(offset, quantidadePorPagina, type);

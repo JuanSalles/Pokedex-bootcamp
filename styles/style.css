@@ -189,3 +189,12 @@ img{
 #button-back-page{
     display: none;
 }
+
+.modal{
+    display: none;
+    width: 100vw;
+    height: 100vw;
+    background-color: #000000cc;
+    position:fixed;
+    top: 0px;
+}

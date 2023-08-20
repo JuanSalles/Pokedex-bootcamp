@@ -31,6 +31,7 @@ export default async function exibirPokemons (listaDePokemons, elemento, offset)
         ancora.classList.add("ancora-pokemon")
         ancora.setAttribute("href","#");
         ancora.setAttribute("id",`${index+offset}`);
+        lista.setAttribute("data-pokeid",`${index+offset}`)
         ancora.appendChild(imagemDoPokemon);
         lista.appendChild(ancora)
         elemento.appendChild(lista);
