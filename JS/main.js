@@ -17,7 +17,7 @@ const pokemonsPorPagina = 20;
 function verificScroll() {
     const scrollPosition = window.scrollY + window.innerHeight;
     const documentHeight = document.documentElement.offsetHeight;
-    return scrollPosition >= documentHeight-200;
+    return scrollPosition >= documentHeight-500;
 };
 
 sectionPage.addEventListener("click", event =>{
