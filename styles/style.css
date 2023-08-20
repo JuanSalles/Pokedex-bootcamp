@@ -102,72 +102,72 @@ img{
 }
 
 [data-type = normal]{
-    background: var(--cor-normal);
+    background-color: var(--cor-normal);
 }
 
 [data-type = fire]{
-    background: var(--cor-fire)!important;
+    background-color: var(--cor-fire)!important;
 }
 
 [data-type = grass] {
-    background:var(--cor-grass)!important;
+    background-color:var(--cor-grass)!important;
 }
 
 [data-type = water]{
-    background: var(--cor-water)!important;
+    background-color: var(--cor-water)!important;
 }
 
 [data-type = bug]{
-    background: var(--cor-bug)!important;
+    background-color: var(--cor-bug)!important;
 }
 
 [data-type = fairy]{
-    background: var(--cor-fairy)!important;
+    background-color: var(--cor-fairy)!important;
 }
 
 [data-type = flying]{
-    background: var(--cor-flying);
+    background-color: var(--cor-flying);
 }
 
 [data-type = poison]{
-    background: var(--cor-poison);
+    background-color: var(--cor-poison);
 }
 
 [data-type = rock]{
-    background: var(--cor-rock);
+    background-color: var(--cor-rock);
 }
 
 [data-type = electric]{
-    background: var(--cor-eletric)!important;
+    background-color: var(--cor-eletric)!important;
     color: rgb(125, 122, 122);
 }
 
 [data-type = ground]{
-    background: var(--cor-ground);
+    background-color: var(--cor-ground);
 }
 
 [data-type = fighting]{
-    background: var(--cor-fighting);
+    background-color: var(--cor-fighting);
 }
 
 [data-type = psychic]{
-    background: var(--cor-psychic);
+    background-color: var(--cor-psychic);
 }
 
 [data-type = ghost]{
-    background: var(--cor-ghost);
+    background-color: var(--cor-ghost);
 }
 
 [data-type = dragon]{
-    background: var(--cor-dragon);
+    background-color: var(--cor-dragon);
 }
 
 [data-type = dark]{
-    background: var(--cor-dark);
+    background-color: var(--cor-dark);
 }
 
 [data-type = ice]{
-    background: var(--cor-ice);
+    background-color: var(--cor-ice);
     color: rgb(125, 122, 122);
 }
 
