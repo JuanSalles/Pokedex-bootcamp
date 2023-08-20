@@ -1,6 +1,9 @@
 console.log("pokemon carregado");
 
+
+
 const pokemon = JSON.parse(localStorage.pokemon);
+
 
 const nome = document.getElementById('nome-do-pokemon');
 const foto = document.getElementById('imagem-do-pokemon');

@@ -8,7 +8,7 @@ const sectionPage = document.getElementById('section-page');
 const botaoNext = document.getElementById('button-next-page');
 const botaoBack = document.getElementById('button-back-page');
 
-let pokemons;
+const todosPokemons =[];
 
 let pagina = 1;
 let numeroDosPokemons = 0;
@@ -52,13 +52,15 @@ window.addEventListener("scroll", event=>{
 
 
 listaDeExibicao.addEventListener("click", event =>{
-    const convercao = JSON.stringify(pokemons[event.target.parentElement.id]);
+    const convercao = JSON.stringify(todosPokemons[event.target.parentElement.id]);
+    console.log(todosPokemons[event.target.parentElement.id].name)
     localStorage.setItem("pokemon", convercao);
 });
 
 async function renderizarPokemons (offset, quantidadePorPagina, elementoDeExibicao, type=""){
-    pokemons = await pokedex(offset, quantidadePorPagina, type);
-    exibirPokemons(pokemons, elementoDeExibicao);
+    const pokemons = await pokedex(offset, quantidadePorPagina, type);
+    todosPokemons.push(...pokemons)
+    exibirPokemons(pokemons, elementoDeExibicao, offset);
 };
 
 renderizarPokemons(numeroDosPokemons, pokemonsPorPagina, listaDeExibicao);

@@ -1,4 +1,4 @@
-export default async function exibirPokemons (listaDePokemons, elemento){
+export default async function exibirPokemons (listaDePokemons, elemento, offset){
 
     listaDePokemons.forEach(async (pokemon, index) => {
 
@@ -29,8 +29,8 @@ export default async function exibirPokemons (listaDePokemons, elemento){
         imagemDoPokemon.setAttribute("src", `${pokemon.sprites.other.dream_world.front_default}`)
         const ancora = document.createElement("a");
         ancora.classList.add("ancora-pokemon")
-        ancora.setAttribute("href","./pages/pokemon.html");
-        ancora.setAttribute("id",`${index}`);
+        ancora.setAttribute("href","#");
+        ancora.setAttribute("id",`${index+offset}`);
         ancora.appendChild(imagemDoPokemon);
         lista.appendChild(ancora)
         elemento.appendChild(lista);
