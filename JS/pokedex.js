@@ -8,7 +8,7 @@ export default async function pokedex (offset, limit, type){
     const pokemons = Promise.all(data.results.map(async element =>{
         const APIResponse = await fetch(element.url);
         const pokemon = await APIResponse.json();
-        return pokemon;
+        return await pokemon;
     }));
 
     return(await pokemons);
