@@ -15,6 +15,10 @@
     flex-direction: column;
 }
 
+.background-modal{
+    border-radius: 36px;
+}
+
 .container-modal{
     display: flex;
     width: 360px;
@@ -54,6 +58,23 @@
 .pokemon-favorito:checked ~ .imagem-coracao{
     background: url('../assets/coracao-2.svg') no-repeat;
     background-size: contain;
+}
+
+.modal__tipo{
+    display: flex;
+    justify-content: start;
+    width: 360px;
+    padding-left: 30px;
+    gap: 10px;
+}
+
+.modal__type-container{
+    width: 70px;
+    background-color: #ffffff5d;
+    text-align: center;
+    padding: 10px  0px;
+    color: #F9F9F9;
+    border-radius: 36px;
 }
 
 .modal__imagem-pokemon{

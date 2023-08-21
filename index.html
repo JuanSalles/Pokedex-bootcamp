@@ -20,46 +20,49 @@
         </section>
     </main>
     <section class="modal" id="poke-modal">
-        <div class="container-modal" id="box-modal">
-            <nav class="modal_header">
-                <button type="button" class="modal__botao-back" id="botao-back"></button>
-                <input class="pokemon-favorito" type="checkbox" id="favoritar-pokemon">
-                <label for="favoritar-pokemon" class="imagem-coracao"></label>
-            </nav>
-            <div class="container-modal__nome">
-                <div class="modal__nome-titulo">
-                    <h1 class="modal__nome"></h1>
-                    <span class="modal__tipo" id="pokemonType-modal"></span>
-                </div>
-                <h4 class="modal__pokeid"></h4>
-            </div>
-            <img class="modal__imagem-pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" id="imagem-do-pokemon">
-            <div class="container-stats">
-                <nav class="menu-stats">
-                    <ul>
-                        <li class="botao-stats">
-                            <input type="checkbox" class="stats-input" id="stats-about">
-                            <label for="stats-about" class="pointer">About</label>
-                        </li>
-                        <li class="botao-stats">
-                            
-                            <input type="checkbox" class="stats-input" id="stats-base">
-                            <label for="stats-base" class="pointer">Base Stats</label>
-                        </li>
-                        <li class="botao-stats">
-                            
-                            <input type="checkbox" class="stats-input" id="stats-evo">
-                            <label for="stats-evo" class="pointer">Evolution</label>
-                        </li>
-                        <li class="botao-stats">
-                            <input type="checkbox" class="stats-input" id="stats-moves">
-                            <label for="stats-moves" class="pointer">Moves</label>
-                        </li>
-                    </ul>
+        <div class="background-modal" id="box-modal">
+            <div class="container-modal">
+                <nav class="modal_header">
+                    <button type="button" class="modal__botao-back" id="botao-back"></button>
+                    <input class="pokemon-favorito" type="checkbox" id="favoritar-pokemon">
+                    <label for="favoritar-pokemon" class="imagem-coracao"></label>
                 </nav>
-
+                <div class="container-modal__nome">
+                    <div class="modal__nome-titulo">
+                        <h1 class="modal__nome" id="nome-do-pokemon"></h1>
+                        <span class="modal__tipo" id="pokemonType-modal"></span>
+                    </div>
+                    <h4 class="modal__pokeid"></h4>
+                </div>
+                <img class="modal__imagem-pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" id="imagem-do-pokemon">
+                <div class="container-stats">
+                    <nav class="menu-stats">
+                        <ul>
+                            <li class="botao-stats">
+                                <input type="checkbox" class="stats-input" id="stats-about">
+                                <label for="stats-about" class="pointer">About</label>
+                            </li>
+                            <li class="botao-stats">
+                                
+                                <input type="checkbox" class="stats-input" id="stats-base">
+                                <label for="stats-base" class="pointer">Base Stats</label>
+                            </li>
+                            <li class="botao-stats">
+                                
+                                <input type="checkbox" class="stats-input" id="stats-evo">
+                                <label for="stats-evo" class="pointer">Evolution</label>
+                            </li>
+                            <li class="botao-stats">
+                                <input type="checkbox" class="stats-input" id="stats-moves">
+                                <label for="stats-moves" class="pointer">Moves</label>
+                            </li>
+                        </ul>
+                    </nav>
+    
+                </div>
             </div>
         </div>
+        
     </section>
     <script type="module" src="JS/main.js"></script>
 </body>

@@ -18,7 +18,7 @@
     --cor-ghost: #6d2b9c;
     --cor-dragon: linear-gradient(0deg, rgb(234, 42, 42) 0%, #8fdbfb 70%);
     --cor-dark: #230939;
-    --cor-ice:radial-gradient(circle, rgb(175, 240, 245) 0%, #fafcfc 70%);
+    --cor-ice:radial-gradient(circle, rgb(142, 192, 196) 0%, #ebebeb 100%);
     --cor-steel:radial-gradient(circle, rgb(255, 255, 255) 0%, #b9b9b9 70%);
 }
 
@@ -159,7 +159,7 @@ img{
 }
 
 [data-type = dragon]{
-    background-color: var(--cor-dragon);
+    background: var(--cor-dragon);
 }
 
 [data-type = dark]{
@@ -167,7 +167,7 @@ img{
 }
 
 [data-type = ice]{
-    background-color: var(--cor-ice);
+    background: var(--cor-ice);
     color: rgb(125, 122, 122);
 }
 
