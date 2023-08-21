@@ -13,7 +13,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
 }
 
 .background-modal{
@@ -148,3 +147,37 @@ li input, .pokemon-favorito{
     border-color: #070706;
 }
 
+.container_modal_tipos{
+    height: 80vh;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-types-container{
+    width: 360px;
+}
+
+.container_modal_tipos h2{
+    color: #F9F9F9;
+    font-weight: 600;
+    font-size: 35px;
+}
+.lista-de-tipos{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 120px 120px;
+    grid-auto-rows: 40px;
+    gap: 10px;
+    font-size: 23px;
+    text-align: center;
+}
+
+.item-tipos{
+    color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}

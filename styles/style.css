@@ -113,13 +113,24 @@ main{
     border-radius: 10px;
 }
 
-#button-back-page{
-    display: none;
+.oppacity-shader{
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    height: 50px;
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, #b9b9b900 90%);
 }
 
 .gif-de-loading{
     margin: 20px;
     width: 50px;
+}
+
+.filtro-pokemon-tipo{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
 }
 
 @media (min-width: 856px){
