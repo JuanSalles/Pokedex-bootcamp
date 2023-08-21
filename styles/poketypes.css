@@ -1,0 +1,101 @@
+:root{
+    --cor-texto-tipo:#ffffff;
+    --cor-grass: #57c1a5;
+    --cor-fire: #ef934c;
+    --cor-poison: #9c32f3;
+    --cor-bug: #a6c050;
+    --cor-flying: #8fdbfb;
+    --cor-water:#75a0fb;
+    --cor-normal: #bcbc8e;
+    --cor-rock: #5f5f5f;
+    --cor-eletric: #ecdb23;
+    --cor-ground: #977506;
+    --cor-fairy: #dcadd5;
+    --cor-fighting: #e0c179;
+    --cor-psychic: #da65bb;
+    --cor-ghost: #6d2b9c;
+    --cor-dragon: linear-gradient(0deg, rgb(234, 42, 42) 0%, #8fdbfb 70%);
+    --cor-dark: #230939;
+    --cor-ice:radial-gradient(circle, rgb(142, 192, 196) 0%, #ebebeb 100%);
+    --cor-steel:radial-gradient(circle, rgb(255, 255, 255) 0%, #b9b9b9 70%);
+
+}
+
+.style-texto-type{
+    color: var(--cor-texto-tipo);
+}
+
+[data-type = normal]{
+    background-color: var(--cor-normal)!important;;
+}
+
+[data-type = fire]{
+    background-color: var(--cor-fire)!important;
+}
+
+[data-type = grass] {
+    background-color:var(--cor-grass)!important;
+}
+
+[data-type = water]{
+    background-color: var(--cor-water)!important;
+}
+
+[data-type = bug]{
+    background-color: var(--cor-bug)!important;
+}
+
+[data-type = fairy]{
+    background-color: var(--cor-fairy)!important;
+}
+
+[data-type = flying]{
+    background-color: var(--cor-flying)!important;;
+}
+
+[data-type = poison]{
+    background-color: var(--cor-poison)!important;;
+}
+
+[data-type = rock]{
+    background-color: var(--cor-rock)!important;;
+}
+
+[data-type = electric]{
+    background-color: var(--cor-eletric)!important;
+    color: rgb(125, 122, 122)!important;
+}
+
+[data-type = ground]{
+    background-color: var(--cor-ground)!important;;
+}
+
+[data-type = fighting]{
+    background-color: var(--cor-fighting)!important;;
+}
+
+[data-type = psychic]{
+    background-color: var(--cor-psychic)!important;;
+}
+
+[data-type = ghost]{
+    background-color: var(--cor-ghost)!important;;
+}
+
+[data-type = dragon]{
+    background: var(--cor-dragon)!important;;
+}
+
+[data-type = dark]{
+    background-color: var(--cor-dark)!important;;
+}
+
+[data-type = ice]{
+    background: var(--cor-ice)!important;;
+    color: rgb(125, 122, 122)!important;;
+}
+
+[data-type = steel]{
+    background: var(--cor-steel)!important;;
+    color: rgb(125, 122, 122)!important;;
+}

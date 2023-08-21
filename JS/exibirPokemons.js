@@ -4,6 +4,7 @@ export default function exibirPokemons (listaDePokemons, elemento, offset){
 
         const lista = document.createElement('li');
         lista.classList.add("container-pokemon");
+        lista.classList.add('style-texto-type');
 
         const primeiraDiv = document.createElement('div');
         primeiraDiv.classList.add("container-nome-tipo");
@@ -30,6 +31,7 @@ export default function exibirPokemons (listaDePokemons, elemento, offset){
         primeiraDiv.appendChild(segundaDiv);
         
         const imagemDoPokemon = document.createElement('img');
+        imagemDoPokemon.classList.add("small-picture");
         imagemDoPokemon.setAttribute("src", `${pokemon.sprites.other["official-artwork"].front_default}`)
         const ancora = document.createElement("div");
         ancora.classList.add("ancora-pokemon")

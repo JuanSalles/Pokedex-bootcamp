@@ -44,8 +44,11 @@ listaDeExibicao.addEventListener("click", event =>{
     const id = event.target.parentElement.dataset.pokeid;
     const pokemon = todosPokemons[id];
     const itemLista = document.getElementById(`${id}`);
+
+    typeModal.textContent = "";
     imagemDoPokemon.setAttribute('src', `${pokemon.sprites.other["official-artwork"].front_default}`)
     modal.style.display = "flex";
+    boxModal.classList.add('style-texto-type');
     boxModal.setAttribute(`data-type`, `${itemLista.dataset.type}`);
     nomeModal.textContent = pokemon.name;
     pokemon.types.forEach(element => {

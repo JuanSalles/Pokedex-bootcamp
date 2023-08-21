@@ -6,7 +6,6 @@
     <title>Pokedex - Bootcamp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/modal.css">
 </head>
 <body>
     <main>
@@ -16,9 +15,11 @@
             <ul class="lista-de-pokemons" id="pokemonList">
 
             </ul>
-            <span id="loading">Loading</span>
         </section>
+
+        <img src="./assets/loading.gif" class="gif-de-loading" alt="gif-de-loading">
     </main>
+    
     <section class="modal" id="poke-modal">
         <div class="background-modal" id="box-modal">
             <div class="container-modal">
@@ -29,8 +30,15 @@
                 </nav>
                 <div class="container-modal__nome">
                     <div class="modal__nome-titulo">
-                        <h1 class="modal__nome" id="nome-do-pokemon"></h1>
-                        <span class="modal__tipo" id="pokemonType-modal"></span>
+                        <h1 class="modal__nome" id="nome-do-pokemon">Bulbassaur</h1>
+                        <span class="modal__tipo" id="pokemonType-modal">
+                            <div class="modal__type-container">
+                                Grass
+                            </div>
+                            <div class="modal__type-container">
+                                Poison
+                            </div>
+                        </span>
                     </div>
                     <h4 class="modal__pokeid"></h4>
                 </div>
