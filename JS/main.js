@@ -1,5 +1,6 @@
 import exibirPokemons from "./exibirPokemons.js";
 import pokedex from "./pokedex.js";
+import statusPokemon from "./statusPokemon.js";
 
 console.log("===JS CARREGADO===");
 
@@ -16,6 +17,7 @@ const botaoTipo = document.getElementById('filter-tipo');
 const elementoListaDeTipos = document.getElementById('filtro-lista-de-tipos');
 let tipoSelecionado = "";
 
+let pokemon;
 
 let todosPokemons = [];
 
@@ -48,9 +50,9 @@ function verificScroll() {
 
 listaDeExibicao.addEventListener("click", event =>{
     const id = event.target.parentElement.dataset.pokeid;
-    const pokemon = todosPokemons[id];
+    pokemon = todosPokemons[id];
     const itemLista = document.getElementById(`${id}`);
-
+    statusPokemon(pokemon);
     typeInsideDetailModal.textContent = "";
     imagemDoPokemon.setAttribute('src', `${pokemon.sprites.other["official-artwork"].front_default}`)
     detailModal.style.display = "flex";

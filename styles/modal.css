@@ -181,3 +181,24 @@ li input, .pokemon-favorito{
     justify-content: center;
     border-radius: 10px;
 }
+
+.modal__about-status{
+    width: 100%;
+    color: #979797;
+    padding-inline: 34px;
+    margin-top: 20px;
+}
+
+.status-coluna{
+    padding: 7px 0px; 
+    font-size: 0.9em;
+}
+
+.nome-status{
+    width: 100px;
+}
+
+.modal__titulo-status{
+    padding: 20px 0px;
+    color: #3d3d3d;
+}
