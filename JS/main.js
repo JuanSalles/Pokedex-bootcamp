@@ -44,7 +44,7 @@ function verificScroll() {
      if (verificScroll() && breakPointAPI && tipoSelecionado=="") {
         breakPointAPI = false;
         numeroDosPokemons += pokemonsPorPagina;
-        breakPointAPI = await renderizarPokemons(numeroDosPokemons, pokemonsPorPagina, listaDeExibicao);
+        breakPointAPI = await renderizarPokemons(numeroDosPokemons, pokemonsPorPagina);
      }
  };
 
@@ -78,14 +78,14 @@ elementoListaDeTipos.addEventListener("click", event =>{
     listaDeExibicao.textContent = "";
     numeroDosPokemons = 0;
     todosPokemons = [];
-    renderizarPokemons(numeroDosPokemons, pokemonsPorPagina, listaDeExibicao, tipoSelecionado);
+    renderizarPokemons(numeroDosPokemons, pokemonsPorPagina, tipoSelecionado);
     typeModal.style.display = "none";
 })
 
-async function renderizarPokemons (offset, quantidadePorPagina, elementoDeExibicao, type=""){
+async function renderizarPokemons (offset, quantidadePorPagina, type=""){
     const pokemons = await pokedex(offset, quantidadePorPagina, type);
     todosPokemons.push(...pokemons)
-    return exibirPokemons(pokemons, elementoDeExibicao, offset);
+    return exibirPokemons(pokemons, offset);
 };
 
-renderizarPokemons(numeroDosPokemons, pokemonsPorPagina, listaDeExibicao);
+renderizarPokemons(numeroDosPokemons, pokemonsPorPagina);

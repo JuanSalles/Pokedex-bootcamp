@@ -1,49 +1,50 @@
-export default function exibirPokemons (listaDePokemons, elemento, offset){
+const listaDeExibicao = document.getElementById('pokemonList')
+
+export default function exibirPokemons(listaDePokemons, offset) {
 
     listaDePokemons.forEach((pokemon, index) => {
-
-        const lista = document.createElement('li');
-        lista.classList.add("container-pokemon");
-        lista.classList.add('style-texto-type');
-
-        const primeiraDiv = document.createElement('div');
-        primeiraDiv.classList.add("container-nome-tipo");
-
-        const tituloNome = document.createElement('h2');
-        tituloNome.textContent = `${pokemon.name}`
-        primeiraDiv.appendChild(tituloNome);
-        primeiraDiv.setAttribute("data-pokeid",`${index+offset}`)
-
-        const segundaDiv = document.createElement('div');
-        segundaDiv.classList.add("container-tipo");
-        pokemon.types.forEach((pokemonType, index) => {
-            const div = document.createElement('div');
-            div.classList.add(`${pokemonType.type.name}`);
-            div.classList.add("pokemon-type");
-            div.textContent += `${pokemonType.type.name}`;
-            if(pokemonType.type.name != "normal" && index==0){
-                lista.setAttribute("data-type", `${pokemonType.type.name}`);
-            }else if(pokemon.types[0].type.name == "normal"){
-                lista.setAttribute("data-type", `${pokemonType.type.name}`);
-            }
-            segundaDiv.appendChild(div);
-        });
-        primeiraDiv.appendChild(segundaDiv);
         
-        const imagemDoPokemon = document.createElement('img');
-        imagemDoPokemon.classList.add("small-picture");
-        imagemDoPokemon.setAttribute("src", `${pokemon.sprites.other["official-artwork"].front_default}`)
-        const ancora = document.createElement("div");
-        ancora.classList.add("ancora-pokemon")
-        ancora.setAttribute("href","#");
-        ancora.setAttribute("data-pokeid",`${index+offset}`);
-        lista.setAttribute("data-pokeid",`${index+offset}`);
-        lista.setAttribute("id",`${index+offset}`);
-        ancora.appendChild(primeiraDiv);
-        ancora.appendChild(imagemDoPokemon);
-        lista.appendChild(ancora)
-        elemento.appendChild(lista);
+        listaDeExibicao.innerHTML += criaElementoPokemon(pokemon, index, offset);
+
+        return true;
+        
     });
-    
-    return true
+}
+function criaElementoPokemon(pokemon, index, offset) {
+
+    const objetoDeTipos = adicionaTiposDePokemon(pokemon.types);
+
+    return (
+        `
+            <li class="container-pokemon style-texto-type" data-type="${objetoDeTipos.mainType}" data-pokeid="${index + offset}" id="${index + offset}">
+                <div class="ancora-pokemon" data-pokeid="${index + offset}">
+                    <div class="container-nome-tipo" data-pokeid="${index + offset}">
+                        <h2>${pokemon.name}</h2>
+                        <div class="container-tipo">
+                            ${objetoDeTipos.elemento}
+                        </div>
+                    </div>
+                    <img class="small-picture" src="${pokemon.sprites.other["official-artwork"].front_default}">
+                </div>
+            </li>
+    `)
+}
+
+function adicionaTiposDePokemon(arrayDeTipos){
+
+    let elementoDeTipos = "";
+    let mainType ="";
+
+    arrayDeTipos.forEach((pokemonType, index) => {
+       
+        if (pokemonType.type.name != "normal" && index == 0) {
+            mainType = pokemonType.type.name;
+        } else if (arrayDeTipos[0].type.name == "normal") {
+            mainType = pokemonType.type.name;
+        }
+        
+        elementoDeTipos += `<div class="${pokemonType.type.name} pokemon-type" data-type="${mainType}">${pokemonType.type.name}</div>`;
+    })
+
+    return {elemento: elementoDeTipos, mainType: mainType}
 }
