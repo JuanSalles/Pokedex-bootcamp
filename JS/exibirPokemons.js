@@ -6,27 +6,26 @@ export default function exibirPokemons(listaDePokemons, offset) {
         
         listaDeExibicao.innerHTML += criaElementoPokemon(pokemon, index, offset);
 
-        return true;
-        
     });
+
+    return true
 }
 function criaElementoPokemon(pokemon, index, offset) {
 
     const objetoDeTipos = adicionaTiposDePokemon(pokemon.types);
 
-    return (
-        `
-            <li class="container-pokemon style-texto-type" data-type="${objetoDeTipos.mainType}" data-pokeid="${index + offset}" id="${index + offset}">
-                <div class="ancora-pokemon" data-pokeid="${index + offset}">
-                    <div class="container-nome-tipo" data-pokeid="${index + offset}">
+    return (`
+        <li class="container-pokemon style-texto-type" data-type="${objetoDeTipos.mainType}" data-pokeid="${index + offset}" id="${index + offset}">
+            <div class="ancora-pokemon" data-pokeid="${index + offset}">
+                <div class="container-nome-tipo" data-pokeid="${index + offset}">
                         <h2>${pokemon.name}</h2>
-                        <div class="container-tipo">
-                            ${objetoDeTipos.elemento}
-                        </div>
+                    <div class="container-tipo">
+                        ${objetoDeTipos.elemento}
                     </div>
-                    <img class="small-picture" src="${pokemon.sprites.other["official-artwork"].front_default}">
                 </div>
-            </li>
+                <img class="small-picture" src="${pokemon.sprites.other["official-artwork"].front_default}">
+            </div>
+        </li>
     `)
 }
 
