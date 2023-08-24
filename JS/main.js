@@ -1,19 +1,15 @@
 import exibirPokemons from "./exibirPokemons.js";
 import pokedex from "./pokedex.js";
-import statusPokemon from "./statusPokemon.js";
+import modalPokemon from "./modalPokemon.js";
 
 console.log("===JS CARREGADO===");
 
+const containerModal = document.getElementById('poke-modal');
 const listaDeExibicao = document.getElementById('pokemonList');
 const botaoBackDetail = document.getElementById('botao-back-detail');
 const botaoBackType = document.getElementById('botao-back-type');
-const detailModal = document.getElementById('poke-modal');
-const typeModal = document.getElementById('poke-modal-tipo');
-const imagemDoPokemon = document.getElementById('imagem-do-pokemon');
-const boxModal = document.getElementById('box-modal');
-const nomeModal = document.getElementById('nome-do-pokemon');
-const typeInsideDetailModal = document.getElementById('pokemonType-modal');
 const botaoTipo = document.getElementById('filter-tipo');
+const typeModal = document.getElementById('poke-modal-tipo');
 const elementoListaDeTipos = document.getElementById('filtro-lista-de-tipos');
 let tipoSelecionado = "";
 
@@ -51,25 +47,13 @@ function verificScroll() {
 listaDeExibicao.addEventListener("click", event =>{
     const id = event.target.parentElement.dataset.pokeid;
     pokemon = todosPokemons[id];
-    const itemLista = document.getElementById(`${id}`);
-    statusPokemon(pokemon);
-    typeInsideDetailModal.textContent = "";
-    imagemDoPokemon.setAttribute('src', `${pokemon.sprites.other["official-artwork"].front_default}`)
-    detailModal.style.display = "flex";
-    boxModal.classList.add('style-texto-type');
-    boxModal.setAttribute(`data-type`, `${itemLista.dataset.type}`);
-    nomeModal.textContent = pokemon.name;
-    pokemon.types.forEach(element => {
-        const div = document.createElement('div');
-        div.textContent = element.type.name;
-        div.classList.add('modal__type-container')
-        typeInsideDetailModal.appendChild(div);
-    });
+    modalPokemon(pokemon);
+    containerModal.style.display = "flex"
 });
 
 botaoTipo.addEventListener("click", () => typeModal.style.display = "flex");
 
-botaoBackDetail.addEventListener("click", () => detailModal.style.display = "none");
+botaoBackDetail.addEventListener("click", () => containerModal.style.display = "none");
 
 botaoBackType.addEventListener("click", () => typeModal.style.display = "none");
 

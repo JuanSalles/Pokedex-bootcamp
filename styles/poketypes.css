@@ -21,6 +21,19 @@
 
 }
 
+.pokemon-type{
+    height: 20px;
+    width: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid;
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
 .style-texto-type{
     color: var(--cor-texto-tipo);
 }

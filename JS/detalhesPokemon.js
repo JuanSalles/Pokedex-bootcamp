@@ -1,6 +1,5 @@
 const div = document.createElement('div');
 
-
 const elementoSpecie = document.getElementById('stat-species');
 const elementoHeight = document.getElementById('stat-height');
 const elementoWeight = document.getElementById('stat-weight');
