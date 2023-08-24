@@ -49,11 +49,15 @@ listaDeExibicao.addEventListener("click", event =>{
     pokemon = todosPokemons[id];
     modalPokemon(pokemon);
     containerModal.style.display = "flex"
+    document.body.style.overflow = "hidden";
 });
 
 botaoTipo.addEventListener("click", () => typeModal.style.display = "flex");
 
-botaoBackDetail.addEventListener("click", () => containerModal.style.display = "none");
+botaoBackDetail.addEventListener("click", () => {
+    containerModal.style.display = "none"
+    document.body.style.overflow = "scroll";
+});
 
 botaoBackType.addEventListener("click", () => typeModal.style.display = "none");
 

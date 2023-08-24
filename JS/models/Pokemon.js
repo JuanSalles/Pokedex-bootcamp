@@ -8,29 +8,6 @@ export default class Pokemon {
     picture;
     abilities;
 
-    escolherTipoPrincipal(){
-        
-        const result = this.types.find((pokemonType, index) => {
-
-            try{
-                if(this.types.length == 1){
-                    console.log(pokemonType.type.name)
-                    return true
-                }
-                else if(pokemonType.type.name != "normal"){
-                    
-                    return true
-                }
-           
-            } catch(e){
-                console.log("erro na escolha do tipo")
-            }
-            
-        })
-
-        return result.type.name;
-    }
-
     constructor(objectPokemon){
         this.id = objectPokemon.id;
         this.name = objectPokemon.name;
