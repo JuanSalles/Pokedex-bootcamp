@@ -21,7 +21,7 @@
     border-radius: 36px;
     background-color: #57c1a5;
     position:fixed;
-    height: 750px;
+    height: 700px;
 }
 
 .container-modal{
@@ -95,7 +95,7 @@
 .modal__imagem-pokemon{
     height: 250px;
     position: relative;
-    bottom: -51px;
+    bottom: -8px;
     z-index: 10;
     
 }
