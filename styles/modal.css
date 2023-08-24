@@ -66,10 +66,13 @@
 }
 
 .container-modal__nome{
+    display: flex;
     position: relative;
     width: 90vw;
     max-width: 360px;
     z-index: 10;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .modal__nome{
@@ -81,7 +84,6 @@
 .modal__tipo{
     display: flex;
     justify-content: start;
-    width: 360px;
     padding-left: 30px;
     gap: 6px;
     
@@ -93,6 +95,11 @@
     padding: 6px  0px;
     border-radius: 36px;
     font-size:0.8em;
+}
+
+.modal__pokeid{
+    padding-right: 20px;
+    color: #ffffffa7;
 }
 
 .modal__imagem-pokemon{

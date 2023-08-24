@@ -39,7 +39,6 @@ main{
     grid-template-columns: 170px 170px;
     grid-auto-rows: 100px;
     gap: 10px;
-    padding-inline: 20px;
     
 }
 
@@ -104,6 +103,7 @@ main{
 .oppacity-shader{
     position: fixed;
     bottom: 0px;
+    left: 0px;
     width: 100vw;
     height: 50px;
     background: linear-gradient(0deg, rgb(255, 255, 255) 0%, #b9b9b900 90%);
